@@ -1,0 +1,62 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 8));
+	background-size: cover;
+	height: 1000px;
+}
+
+.header{
+	background: linear-gradient(rgba(255, 0, 0, 6), rgba(0, 0, 0, 0));
+	background-size: cover;
+}
+
+.header__title{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 20px;
+	color: rgba(0, 0, 0, 8);
+	margin-left: 100px;
+	padding-top: 50px;
+	margin-bottom: 20px;
+}
+
+.header__line{
+	color: black;
+} 
+
+.footer{
+	background-color: black;
+	padding-right: 100px;
+	padding-left: 100px;
+}
+
+.footer__info{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.info__student{
+	color: white;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 10px;
+}
+
+.info__address{
+	color: white;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 10px;
+}
