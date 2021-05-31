@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<title>SVG</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -12,13 +15,72 @@
 		<h1 class="header__title">Создание и использование графики в формате SVG</h1>
 		<hr class="header__line">
 	</header>
-	<main>
-		
+	<main class="main">
+		<section class="main__base base">
+			<h3 class="base__heading">Базовые иконки</h3>
+			<div class="base__element">
+
+				<a href="" class="element__color"><svg xmlns="http://www.w3.org/2000/svg" >
+				    <line class="element__new-color" x1="15" y1="15" x2="70" y2="70" stroke="black" stroke-width="2" />
+				    <line class="element__new-color" x1="70" y1="15" x2="15" y2="70" stroke="black" stroke-width="2" />
+				    <circle class="element__new-color" cx="43" cy="43" r="40" stroke="black" stroke-width="2" fill="none" />
+				</svg></a>
+
+				<svg xmlns="http://www.w3.org/2000/svg" >
+					<symbol id="ic">
+						<line x1="15" y1="25" x2="75" y2="25" stroke="black" stroke-width="2" />
+						<line x1="15" y1="45" x2="75" y2="45" stroke="black" stroke-width="2" />
+						<line x1="15" y1="65" x2="75" y2="65" stroke="black" stroke-width="2" />
+					</symbol>
+				</svg>
+
+				<svg xmlns="http://www.w3.org/2000/svg" >
+				    <line x1="55" y1="55" x2="90" y2="80" stroke="black" stroke-width="2" />
+				    <circle  cx="33" cy="33" r="30" stroke="black" stroke-width="2" fill="none" />
+				</svg>
+
+				<a href="" class="element__color"><svg xmlns="http://www.w3.org/2000/svg">
+					<polyline class="element__new-color" points="10,50 50,0 90,50 10,50 10,100 90,100 90,50" fill:="none"; stroke="black"; stroke-width="2"></polyline>
+				</svg></a>
+			</div> 
+		</section>
+
+		<section class="main__animation animation">
+			<h3 class="animation__heading">Анимированная иконка</h3>
+			<button class="animation__button button">
+				<svg xmlns="http://www.w3.org/2000/svg" wigth="70" class="menu">
+					<line x1="15" y1="25" x2="75" y2="25" stroke="black" stroke-width="2" />
+					<line x1="15" y1="45" x2="75" y2="45" stroke="black" stroke-width="2" />
+					<line x1="15" y1="65" x2="75" y2="65" stroke="black" stroke-width="2" />
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" class="x">
+				    <line x1="15" y1="15" x2="70" y2="70" stroke="black" stroke-width="2" />
+				    <line x1="70" y1="15" x2="15" y2="70" stroke="black" stroke-width="2" />
+				</svg>
+			</button>
+
+		<section class="main__base base">
+			<h3 class="base__heading">Иконки с повторяющимися элементами</h3>
+		</section>
 	</main>
 	<footer class="footer">
 		<div class="footer__info info">
 		<h5 class="info__student">Работа студента группы 201-321: Шунаевой Екатерины</h5>
 		<h5 class="info__address">Москва, 2021</h5>
 	</footer>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $('.animation__button').click(function() {
+			    $('.x').hide();
+			    $('.menu').show();
+			});
+
+			$('.animation__button').click(function() {
+			    $('.menu').hide();
+			    $('.x').show();
+			})
+		    });
+	</script>
 </body>
 </html>
