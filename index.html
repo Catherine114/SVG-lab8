@@ -56,21 +56,32 @@
 		</section>
 
 		<section class="main__animation animation">
-			<h3 class="animation__heading">Анимированная иконка</h3>
-			<button class="animation__button button">
-				<svg xmlns="http://www.w3.org/2000/svg" wigth="70" class="menu">
-					<line x1="15" y1="25" x2="75" y2="25" stroke="black" stroke-width="2" />
-					<line x1="15" y1="45" x2="75" y2="45" stroke="black" stroke-width="2" />
-					<line x1="15" y1="65" x2="75" y2="65" stroke="black" stroke-width="2" />
-				</svg>
-				<svg xmlns="http://www.w3.org/2000/svg" class="x">
-				    <line x1="15" y1="15" x2="70" y2="70" stroke="black" stroke-width="2" />
-				    <line x1="70" y1="15" x2="15" y2="70" stroke="black" stroke-width="2" />
-				</svg>
-			</button>
+				<h3 class="animation__heading">Анимированная иконка</h3>
+				<div class="base__element">
+				<button class="animation__button button">
+					<svg xmlns="http://www.w3.org/2000/svg" wigth="70" class="menu">
+						<line x1="15" y1="25" x2="75" y2="25" stroke="black" stroke-width="2" />
+						<line x1="15" y1="45" x2="75" y2="45" stroke="black" stroke-width="2" />
+						<line x1="15" y1="65" x2="75" y2="65" stroke="black" stroke-width="2" />
+					</svg>
+					<svg xmlns="http://www.w3.org/2000/svg" class="x">
+					    <line x1="15" y1="15" x2="70" y2="70" stroke="black" stroke-width="2" />
+					    <line x1="70" y1="15" x2="15" y2="70" stroke="black" stroke-width="2" />
+					</svg>
+				</button>
+
+				<div id="clock">
+				    <div id="hour"></div>
+				    <div id="min"></div>
+				    <div id="sec"></div>
+				    <div id="dot"></div>
+				</div>
+			</div>
+		</section>
 
 		<section class="main__base base">
 			<h3 class="base__heading">Иконки с повторяющимися элементами</h3>
+			<div class="base__element">
 
 			<svg xmlns="http://www.w3.org/2000/svg">
 				<circle  cx="60" cy="60" r="30" stroke="yellow" stroke-width="2" fill="none" />
@@ -90,12 +101,12 @@
 				<line x1="60" y1="60" x2="60" y2="28" stroke="black" stroke-width="2" />
 			</svg>
 
-			<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-				 width="128px" height="128px" viewBox="0 0 1280.000000 1280.000000"
+			<svg class="lamp" version="1.0" xmlns="http://www.w3.org/2000/svg"
+				 width="128px" height="170px" viewBox="0 0 1280 1280"
 				 preserveAspectRatio="xMidYMid meet">
 				<g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
 				fill="#000000" stroke="none">
-				<path style="fill:#f1f2f2;stroke:#38434a;stroke-width:19;stroke-miterlimit:10"
+				<path class="lamp-color" style="fill:black; stroke:#38434a; stroke-width:19; stroke-miterlimit:10"
 				d="M5910 12704 c-19 -2 -84 -9 -145 -15 -470 -46 -936 -180 -1370 -394
 				-1047 -518 -1768 -1450 -1945 -2512 -69 -416 -51 -889 51 -1298 79 -320 181
 				-558 427 -993 524 -928 867 -1663 1104 -2362 164 -484 248 -875 268 -1245 9
@@ -118,6 +129,8 @@
 				-1095 8 -602 0 -1095 -3 -1095 -6z"/>
 				</g>
 			</svg>
+			<button class="power">Нажать</button>
+		</div>
 		</section>
 	</main>
 	<footer class="footer">
@@ -126,6 +139,7 @@
 		<h5 class="info__address">Москва, 2021</h5>
 	</footer>
 
+	<script src="anime-master/lib/anime.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".x").hide();
@@ -137,7 +151,81 @@
 			    $('.x').hide();
 			    $('.menu').show();
 			})
+
+			/*$(".power").on("click", function() {
+				 $(".lamp-color").css({fill: "yellow"});*/
+				  $(".power").on("click", function (e) { 
+	                e.preventDefault();
+	                if ($(this).css({fill: "black"})) {
+	                    $(".lamp-color").css({fill: "yellow"});
+	                } 
+	                else {
+	                    $(".lamp-color").css({fill: "black"});
+	                }
+			})
+
+				    $(".lamp-color").on("click", function (e) { 
+	                e.preventDefault();
+	                if ($(this).css({fill: "yellow"})) {
+	                    $(".lamp-color").css({fill: "black"});
+	                } 
+			})
 		    });
+
+		$(function() {
+     
+		      setInterval( function() {
+		      var seconds = new Date().getSeconds();
+		      var sdegree = seconds * 6;
+		      var srotate = "rotate(" + sdegree + "deg)";
+		      
+		      $("#sec").css({ "transform": srotate });
+		          
+		      }, 1000 );
+		      
+		      setInterval( function() {
+		      var hours = new Date().getHours();
+		      var mins = new Date().getMinutes();
+		      var hdegree = hours * 30 + (mins / 2);
+		      var hrotate = "rotate(" + hdegree + "deg)";
+		      
+		      $("#hour").css({ "transform": hrotate});
+		          
+		      }, 1000 );
+
+		      setInterval( function() {
+		      var mins = new Date().getMinutes();
+		      var mdegree = mins * 6;
+		      var mrotate = "rotate(" + mdegree + "deg)";
+		      
+		      $("#min").css({"transform" : mrotate });
+		          
+		      }, 1000 );
+		 
+		});
+
+		const animeTimeline = anime.timeline({loop: true});
+
+		let animation = anime.timeline({
+		  duration: 1000, 
+		  easing: 'easeInOutSine',
+		  direction: 'alternate', 
+		  loop: true
+		});           
+		  
+		animation.add({
+		  targets: '.one',
+		  translateY: -50,
+		  backgroundColor: 'rgb(255, 0, 0)'
+		}).add({
+		  targets: '.two',
+		  translateY: -50,
+		  backgroundColor: 'rgb(0, 255, 0)'
+		}).add({
+		  targets: '.three',
+		  translateY: -50,
+		  backgroundColor: 'rgb(0, 0, 255)'
+		});
 	</script>
 </body>
 </html>

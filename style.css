@@ -69,6 +69,23 @@ body{
 	cursor: pointer;
 }
 
+.power {
+  background: #38434A;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: Montserrat;
+  font-size: 1.2em;
+  height: 35px;
+  text-align: center;
+  user-select: none;
+  transition: none;
+}
+
+.lamp{
+	padding-bottom: 30px;
+}
+
 .footer{
 	background-color: black;
 	padding-right: 100px;
@@ -98,4 +115,69 @@ body{
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 10px;
+}
+
+#clock {
+    width: 140px;
+    height: 140px;
+    background: #EEDC82;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 100px;
+}
+
+#dot {
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#sec {
+    width: 2px;
+    height: 60px;
+    background: red;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 13px;
+    margin: auto;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+}
+
+#min {
+    width: 4px;
+    height: 55px;
+    background: black;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 15px;
+    margin: auto;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+}
+
+#hour {
+    width: 4px;
+    height: 40px;
+    background: black;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 30px;
+    margin: auto;
+    -webkit-transform-origin: center bottom;
+    -webkit-transform: rotate(0deg);
+}
+
+.lamp-color{
+	cursor: pointer;
 }
