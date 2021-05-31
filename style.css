@@ -4,13 +4,13 @@
 }
 
 body{
-	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 8));
+	background: linear-gradient(rgba(0, 0, 0, 0), rgb(128,128,128));
 	background-size: cover;
-	height: 700px;
+	height: 1000px;
 }
 
 .header{
-	background: linear-gradient(rgba(255, 0, 0, 5), rgba(0, 0, 0, 0));
+	background: linear-gradient(rgba(255, 90, 92, 5), rgba(0, 0, 0, 0));
 	background-size: cover;
 }
 
@@ -39,7 +39,7 @@ body{
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 20px;
 	color: rgba(0, 0, 0, 8);
 	padding-top: 30px;
@@ -87,7 +87,7 @@ body{
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 10px;
 }
 
@@ -96,6 +96,6 @@ body{
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 10px;
 }
